@@ -1,0 +1,28 @@
+; Demo / dev project for Quests — Lite.
+
+config_version=5
+
+[application]
+
+config/name="Quests — Lite — Demo"
+config/description="Free COLLECT + KILL quests for Godot 4.3+."
+config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="res://demo/quests_demo.tscn"
+
+[autoload]
+
+QuestsLite="*res://addons/quests_lite/quest_manager_lite.gd"
+
+[display]
+
+window/size/viewport_width=900
+window/size/viewport_height=540
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/quests_lite/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
