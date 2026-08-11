@@ -58,7 +58,7 @@ func _build_ui() -> void:
 	var layer := CanvasLayer.new()
 	add_child(layer)
 	var title := Label.new()
-	title.text = "Quests — Lite — Demo"
+	title.text = "Quests (Lite) · Demo"
 	title.position = Vector2(16, 12)
 	title.add_theme_font_size_override("font_size", 16)
 	layer.add_child(title)
@@ -110,7 +110,7 @@ func _refresh() -> void:
 		var state: int = QuestsLite.get_state(String(q.id))
 		var state_str: String = ["AVAILABLE", "ACTIVE", "COMPLETE"][state]
 		var title := Label.new()
-		title.text = "%s — %s" % [String(q.title), state_str]
+		title.text = "%s: %s" % [String(q.title), state_str]
 		title.add_theme_font_size_override("font_size", 13)
 		title.modulate = Color(0.6, 0.9, 0.6) if state == 2 else (Color(0.9, 0.85, 0.6) if state == 1 else Color(0.7, 0.7, 0.7))
 		_quest_panel.add_child(title)

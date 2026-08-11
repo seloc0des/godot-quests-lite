@@ -1,5 +1,7 @@
 # Quests — Lite
 
+> **New since 1.0.0:** a no-code authoring dock (create, edit, duplicate and delete `QuestLite` quests from an editor panel) and a one-click **Setup** tab that drops a working component into your scene. Details in CHANGELOG.md.
+
 **FREE.** COLLECT + KILL quest tracking for Godot 4.3+. Pure GDScript. MIT.
 
 The working core of the [CindieForge Quests addon](docs/upgrade.md). Register quests, start them, report progress, auto-completes when every objective is met.
