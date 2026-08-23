@@ -1,8 +1,8 @@
 # Quests — Lite
 
-**FREE.** COLLECT + KILL quest tracking for Godot 4.3+. Pure GDScript. MIT.
+**FREE.** COLLECT + KILL quest tracking for Godot 4.5+. Pure GDScript. MIT.
 
-The working core of the [CindieForge Quests addon](docs/upgrade.md). Register quests, start them, report progress, auto-completes when every objective is met.
+The working core of the [selodev Quests addon](docs/upgrade.md). Register quests, start them, report progress, auto-completes when every objective is met.
 
 ## 5-minute install
 

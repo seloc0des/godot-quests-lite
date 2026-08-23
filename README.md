@@ -1,15 +1,19 @@
-# Quests — Lite
+# Quests (Lite)
 
-> **New since 1.0.0:** a no-code authoring dock (create, edit, duplicate and delete `QuestLite` quests from an editor panel) and a one-click **Setup** tab that drops a working component into your scene. Details in CHANGELOG.md.
+**FREE.** COLLECT + KILL quest tracking for Godot 4.5+. Pure GDScript. MIT.
 
-**FREE.** COLLECT + KILL quest tracking for Godot 4.3+. Pure GDScript. MIT.
+The working core of the [selodev Quests addon](docs/upgrade.md). Register quests, start them, report progress, auto-completes when every objective is met.
 
-The working core of the [CindieForge Quests addon](docs/upgrade.md). Register quests, start them, report progress, auto-completes when every objective is met.
+> **New in v1.1 — no-code dock.** Enable the plugin and an authoring panel appears: create, edit, duplicate, and delete your resources in a UI, no Inspector or `.tres` editing. (The Pro tier adds every field, one-click scene wiring, and the `EventTrigger` node.)
+
+## One-click setup (no code)
+
+Enable the plugin and a **Quests · Setup** tab appears in the editor. Pick the outcome you want and press **Apply** — the Lite component is added to your scene, baked in and editable. *(Pro unlocks the full no-code wiring — gameplay triggers, bound UI, cross-system hooks.)*
 
 ## 5-minute install
 
 1. Copy `addons/quests_lite/` into your project's `addons/` folder.
-2. Project → Project Settings → Plugins → enable **Quests — Lite**.
+2. Project → Project Settings → Plugins → enable **Quests (Lite)**.
 3. The plugin registers the `QuestsLite` autoload.
 4. Build `QuestLite` Resources with `QuestObjectiveLite`s (COLLECT or KILL).
 5. `QuestsLite.register(quest)`, `QuestsLite.start_quest(id)`.
@@ -51,7 +55,6 @@ See [docs/upgrade.md](docs/upgrade.md).
 ## License
 
 MIT.
-
 
 ---
 
