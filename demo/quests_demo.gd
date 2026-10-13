@@ -24,12 +24,12 @@ func _ready() -> void:
 		"Slay three wolves.",
 		[_obj("kill_wolves", QuestObjectiveLite.Type.KILL, "wolf", 3)])
 
-	QuestsLite.register(_quest_a)
-	QuestsLite.register(_quest_b)
+	_quests_lite().register(_quest_a)
+	_quests_lite().register(_quest_b)
 
-	QuestsLite.objective_progressed.connect(_refresh.unbind(4))
-	QuestsLite.quest_started.connect(_refresh.unbind(1))
-	QuestsLite.quest_completed.connect(_refresh.unbind(1))
+	_quests_lite().objective_progressed.connect(_refresh.unbind(4))
+	_quests_lite().quest_started.connect(_refresh.unbind(1))
+	_quests_lite().quest_completed.connect(_refresh.unbind(1))
 
 	_build_ui()
 	_refresh()
@@ -68,12 +68,12 @@ func _build_ui() -> void:
 	btns.position = Vector2(16, 48)
 	btns.add_theme_constant_override("separation", 4)
 	layer.add_child(btns)
-	_add_btn(btns, "Start Herbs quest", func(): QuestsLite.start_quest("herbs"))
-	_add_btn(btns, "Start Wolves quest", func(): QuestsLite.start_quest("wolves"))
-	_add_btn(btns, "+1 Herb", func(): QuestsLite.report_collect("herb", 1))
-	_add_btn(btns, "+5 Herbs", func(): QuestsLite.report_collect("herb", 5))
-	_add_btn(btns, "Slay a wolf", func(): QuestsLite.report_kill("wolf", 1))
-	_add_btn(btns, "Slay a bear (noise)", func(): QuestsLite.report_kill("bear", 1))
+	_add_btn(btns, "Start Herbs quest", func(): _quests_lite().start_quest("herbs"))
+	_add_btn(btns, "Start Wolves quest", func(): _quests_lite().start_quest("wolves"))
+	_add_btn(btns, "+1 Herb", func(): _quests_lite().report_collect("herb", 1))
+	_add_btn(btns, "+5 Herbs", func(): _quests_lite().report_collect("herb", 5))
+	_add_btn(btns, "Slay a wolf", func(): _quests_lite().report_kill("wolf", 1))
+	_add_btn(btns, "Slay a bear (noise)", func(): _quests_lite().report_kill("bear", 1))
 
 	# Quest panel (right).
 	var panel := PanelContainer.new()
@@ -107,7 +107,7 @@ func _refresh() -> void:
 	hdr.add_theme_font_size_override("font_size", 15)
 	_quest_panel.add_child(hdr)
 	for q in [_quest_a, _quest_b]:
-		var state: int = QuestsLite.get_state(String(q.id))
+		var state: int = _quests_lite().get_state(String(q.id))
 		var state_str: String = ["AVAILABLE", "ACTIVE", "COMPLETE"][state]
 		var title := Label.new()
 		title.text = "%s: %s" % [String(q.title), state_str]
@@ -116,7 +116,17 @@ func _refresh() -> void:
 		_quest_panel.add_child(title)
 		for o in q.objectives:
 			var line := Label.new()
-			var prog := QuestsLite.get_progress(String(q.id), String(o.id))
+			var prog := _quests_lite().get_progress(String(q.id), String(o.id))
 			line.text = "    • %s/%d %s" % [str(prog), int(o.required), String(o.target_id)]
 			line.add_theme_font_size_override("font_size", 12)
 			_quest_panel.add_child(line)
+
+
+# QuestsLite is looked up when used instead of named. A script that names an autoload
+# won't compile until the plugin that adds it is switched on, so a fresh install
+# printed parse errors.
+const QUESTS_LITE := preload("res://addons/quests_lite/quest_manager_lite.gd")
+
+
+static func _quests_lite() -> QUESTS_LITE:
+	return (Engine.get_main_loop() as SceneTree).root.get_node(^"QuestsLite") as QUESTS_LITE
