@@ -13,14 +13,15 @@
 - **Save-contract auto-join.** Quest state, progress per objective, flags, context, currency baselines all persist.
 - **Shared `Events` autoload.** Auto-listens for `item_acquired` / `enemy_killed` / `region_reached` from the rest of the RPG Toolkit — no glue code.
 
-## Migration from Lite
+## Moving from Lite
 
-`QuestLite.objectives` use a subset of the same shape Pro `Quest.objectives` use. Drop your `.tres` files into the Pro project; they read as quests with only COLLECT / KILL objectives. Add prerequisites / rewards / extra objective types in the Pro Inspector.
+The full version installs next to the Lite, in its own folder, and both run in the same project, so you can move over one piece at a time. It isn't a drop-in replacement: the class names differ, and so do some method names.
+
+`QuestLite` becomes `Quest`, and the `QuestsLite` autoload becomes `QuestManager`. `register`, `start_quest`, `is_active` and `is_complete` keep their names. `report_collect(item, n)` and `report_kill(enemy, n)` become `report(event_type, key, amount)`. Your `QuestLite.tres` files stay Lite resources, so re-create them as full quests. The fields have the same names, but objective types are numbered differently (`KILL` is 1 in the Lite and 3 in the full version), so pick each objective's type again rather than copying the number.
 
 ## Where to buy
 
-The full version is on itch.io — **https://selodev.itch.io**. Both tiers share the
-same field names and method signatures, so upgrading is a class-name swap.
+The full version is on itch.io: **https://selodev.itch.io**.
 
 ## License
 
