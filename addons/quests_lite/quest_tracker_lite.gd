@@ -4,7 +4,7 @@ extends PanelContainer
 # The small quest list at the top right: every active quest with its objectives
 # ("Collect herb 1/3"), and a quest finished while it's up stays on it marked
 # complete. The quest_log key (J) hides and shows it. Plain on purpose, text on
-# the default theme; Pro has the full QuestLogUI with tabs.
+# the default theme; the full version has the full QuestLogUI with tabs.
 
 const TOAST := preload("res://addons/quests_lite/quest_toast_lite.gd")
 const OBJECTIVE := preload("res://addons/quests_lite/quest_objective_lite.gd")

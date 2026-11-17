@@ -135,7 +135,7 @@ func _run_completion_fires_once() -> void:
 
 
 # Regression: objective_progressed was widened from 3 → 4 args to match the
-# Pro signature (qid, oid, current, required). Lock that in.
+# The full version signature (qid, oid, current, required). Lock that in.
 func _run_objective_progressed_signature() -> void:
 	await get_tree().process_frame
 	_wipe()

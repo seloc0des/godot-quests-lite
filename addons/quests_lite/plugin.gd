@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-# Ships a compact no-code authoring dock (the Pro tier adds full fields + wiring)
+# Ships a compact no-code authoring dock (the full version adds full fields + wiring)
 # plus the "chooser" — pick what gives out quests → Apply → baked onto your node.
 # Registers the QuestsLite autoload too, so ticking the plugin is the whole install.
 

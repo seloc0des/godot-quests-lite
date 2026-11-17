@@ -125,4 +125,4 @@ QuestsLite.report_collect(String(item.id), n)
 QuestsLite.report_kill(enemy_id, 1)
 ```
 
-The **Pro tier** hears the Inventory and Combat packs on its own through the shared `Events` autoload.
+The **full version** hears the Inventory and Combat packs on its own through the shared `Events` autoload.

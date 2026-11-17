@@ -6,7 +6,7 @@ extends Node
 # to advance progress. The no-code nodes (QuestBoardLite, QuestTargetLite,
 # QuestTrackerLite) are that game code, so a buyer never has to be.
 #
-# Cut from Pro:
+# Not in the Lite:
 #   * 6 more objective types (USE, CURRENCY, TALK, REACH, FLAG, CUSTOM)
 #   * Quest chains via prerequisite_quests
 #   * Condition prerequisites (flags, min_level, biome lists)
@@ -21,8 +21,8 @@ extends Node
 signal quest_registered(quest_id: String)
 signal quest_started(quest_id: String)
 signal quest_completed(quest_id: String)
-# `current` + `required` (4 args) matches the Pro QuestManager signature so
-# Lite→Pro upgrades don't have to rewrite listener bodies. Pre-existing
+# `current` + `required` (4 args) matches the full QuestManager signature so
+# Lite-to-full upgrades don't have to rewrite listener bodies. Pre-existing
 # 3-arg Lite consumers can still bind with `.unbind(1)`.
 signal objective_progressed(quest_id: String, objective_id: String, current: int, required: int)
 signal objective_completed(quest_id: String, objective_id: String)

@@ -135,7 +135,7 @@ func _ready() -> void:
 
 	root.add_child(HSeparator.new())
 	var pro := Label.new()
-	pro.text = "🔒 Pro adds a QuestGiver that talks the player through taking and handing in quests, a styled QuestLogUI with tabs, rewards, quest chains, six more objective types and save integration."
+	pro.text = "🔒 The full version adds a QuestGiver that talks the player through taking and handing in quests, a styled QuestLogUI with tabs, rewards, quest chains, six more objective types and save integration."
 	pro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	pro.modulate = Color(0.85, 0.8, 0.55)
 	root.add_child(pro)

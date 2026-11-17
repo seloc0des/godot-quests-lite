@@ -53,15 +53,15 @@ QuestsLite.report_kill("wolf", 2)   # progress: 3/3 → quest_completed fires
 
 | Feature | Tier |
 |---|---|
-| Objective types: USE, CURRENCY, TALK, REACH, FLAG, CUSTOM | Pro |
-| Quest chains (`prerequisite_quests`) | Pro |
-| Condition prerequisites (flags, level, biome) | Pro |
-| Optional + hidden objectives | Pro |
-| Rewards (ITEM, CURRENCY, FLAG, CUSTOM) | Pro |
-| Time limits + repeatable | Pro |
-| `QuestGiver` Node (talk to take and hand in quests) + `QuestLogUI` Control with tabs | Pro |
-| Objectives and rewards authored in the dock (Lite edits objectives in the Inspector) | Pro |
-| Save-contract auto-join + shared `Events` bus | Pro |
+| Objective types: USE, CURRENCY, TALK, REACH, FLAG, CUSTOM | Full version |
+| Quest chains (`prerequisite_quests`) | Full version |
+| Condition prerequisites (flags, level, biome) | Full version |
+| Optional + hidden objectives | Full version |
+| Rewards (ITEM, CURRENCY, FLAG, CUSTOM) | Full version |
+| Time limits + repeatable | Full version |
+| `QuestGiver` Node (talk to take and hand in quests) + `QuestLogUI` Control with tabs | Full version |
+| Objectives and rewards authored in the dock (Lite edits objectives in the Inspector) | Full version |
+| Save-contract auto-join + shared `Events` bus | Full version |
 
 See [docs/upgrade.md](docs/upgrade.md).
 

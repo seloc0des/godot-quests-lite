@@ -1,6 +1,6 @@
-# Upgrade to Quests (Pro)
+# Upgrade to the full Quests
 
-## What Pro adds
+## What the full version adds
 
 - **Six more objective types.** USE (consume N), CURRENCY (earn N), TALK (NPC dialogue), REACH (region), FLAG (story beat), CUSTOM (anything). 8 total vs. 2.
 - **Quest chains.** `prerequisite_quests = ["chapter_1"]` gates Chapter 2 until Chapter 1 completes.
